@@ -1,4 +1,6 @@
-﻿namespace Catalog.API.Exception
+﻿using CoreLibrary.Exceptions;
+
+namespace Catalog.API.Exception
 {
     public class ProductNotFoundException : NotFoundException
     {
