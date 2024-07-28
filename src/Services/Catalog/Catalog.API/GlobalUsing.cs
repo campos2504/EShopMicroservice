@@ -4,3 +4,5 @@ global using Carter;
 global using Catalog.API.Models;
 global using CoreLibrary.CQRS;
 global using Marten;
+global using FluentValidation;
+ 
