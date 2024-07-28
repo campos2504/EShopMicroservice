@@ -1,6 +1,5 @@
-using CoreLibrary.Behaviors;
-using Microsoft.AspNetCore.Diagnostics;
-using System.Text.Json;
+
+using CoreLibrary.Exceptions.Handler;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +20,7 @@ builder.Services.AddMarten(options =>
     options.Connection(builder.Configuration.GetConnectionString("Database"));
 }).UseLightweightSessions();
 
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 var app = builder.Build();
 
 if(app.Environment.IsDevelopment())
@@ -29,5 +29,7 @@ if(app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.MapCarter();
+
+app.UseExceptionHandler(options => { });
 
 app.Run();
