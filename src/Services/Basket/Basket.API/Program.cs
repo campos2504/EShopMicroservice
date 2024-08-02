@@ -12,6 +12,12 @@ builder.Services.AddValidatorsFromAssembly(assembly);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddMarten(options =>
+{
+    options.Connection(builder.Configuration.GetConnectionString("Database"));
+    options.Schema.For<ShoppingCart>().Identity(x => x.UserName);
+}).UseLightweightSessions();
+
 var app = builder.Build();
 app.MapCarter();
 if (app.Environment.IsDevelopment())
