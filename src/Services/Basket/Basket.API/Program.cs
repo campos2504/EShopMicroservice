@@ -11,8 +11,9 @@ builder.Services.AddMediatR(config =>
 builder.Services.AddValidatorsFromAssembly(assembly);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-var app = builder.Build();
 
+var app = builder.Build();
+app.MapCarter();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
