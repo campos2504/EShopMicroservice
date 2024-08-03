@@ -12,6 +12,9 @@ builder.Services.AddValidatorsFromAssembly(assembly);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddTransient<IBasketRepository, BasketRepository>();
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+
 builder.Services.AddMarten(options =>
 {
     options.Connection(builder.Configuration.GetConnectionString("Database"));
@@ -19,6 +22,8 @@ builder.Services.AddMarten(options =>
 }).UseLightweightSessions();
 
 var app = builder.Build();
+
+app.UseExceptionHandler(options => { });
 app.MapCarter();
 if (app.Environment.IsDevelopment())
 {
