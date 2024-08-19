@@ -10,4 +10,7 @@ global using Basket.API.Exceptions;
 global using Marten;
 global using Basket.API.Data;
 global using CoreLibrary.Exceptions.Handler;
+global using Discount.Grpc.Proto;
+global using Discount.Grpc.Proto;
+
 //global using Basket.API.Dtos;
