@@ -1,5 +1,3 @@
-using System;
-
 namespace Ordering.Domain.ValueObjects
 {
     public record Payment

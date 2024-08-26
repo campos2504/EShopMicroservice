@@ -1,5 +1,3 @@
-using System;
-
 namespace Ordering.Domain.Exceptions
 {
     public class DomainException : Exception

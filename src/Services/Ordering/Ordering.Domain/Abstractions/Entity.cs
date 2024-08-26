@@ -1,5 +1,3 @@
-using System;
-
 namespace Ordering.Domain.Abstractions
 {
     public abstract class Entity<T> : IEntity<T>
