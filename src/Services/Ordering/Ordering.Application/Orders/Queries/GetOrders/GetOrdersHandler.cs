@@ -1,4 +1,3 @@
-using System;
 using CoreLibrary.Pagination;
 
 namespace Ordering.Application.Orders.Queries.GetOrders

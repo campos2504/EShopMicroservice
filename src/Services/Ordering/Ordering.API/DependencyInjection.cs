@@ -1,6 +1,5 @@
 ﻿using Carter;
 using CoreLibrary.Exceptions.Handler;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 namespace Ordering.API
 {
