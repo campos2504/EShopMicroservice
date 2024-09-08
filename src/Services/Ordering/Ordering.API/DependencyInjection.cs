@@ -1,5 +1,7 @@
 ﻿using Carter;
 using CoreLibrary.Exceptions.Handler;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 namespace Ordering.API
 {
@@ -10,7 +12,8 @@ namespace Ordering.API
             services.AddCarter();
 
             services.AddExceptionHandler<CustomExceptionHandler>();
-            services.AddHealthChecks();
+            services.AddHealthChecks()
+                .AddSqlServer(configuration.GetConnectionString("Database")!);
             return services;
         }
 
@@ -19,7 +22,11 @@ namespace Ordering.API
             app.MapCarter();
 
             app.UseExceptionHandler(options => { });
-            app.UseHealthChecks("/health");
+            app.UseHealthChecks("/health",
+            new HealthCheckOptions
+            {
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+            });
 
             return app;
         }
