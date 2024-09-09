@@ -1,5 +1,6 @@
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using CoreLibrary.Messaging.MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -57,6 +58,8 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
 
     return handler;
 });
+
+builder.Services.AddMessageBroker(builder.Configuration);
 #endregion
 var app = builder.Build();
 

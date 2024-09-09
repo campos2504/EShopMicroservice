@@ -1,4 +1,3 @@
-
 using Catalog.API.Data;
 using CoreLibrary.Exceptions.Handler;
 using HealthChecks.UI.Client;

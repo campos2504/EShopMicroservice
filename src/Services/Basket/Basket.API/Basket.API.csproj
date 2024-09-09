@@ -23,11 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Basket\CheckoutBasket\" />
     <Folder Include="Dtos\" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\CoreLibrary\CoreLibrary.Messaging\CoreLibrary.Messaging.csproj" />
     <ProjectReference Include="..\..\..\CoreLibrary\CoreLibrary\CoreLibrary.csproj" />
   </ItemGroup>
 
