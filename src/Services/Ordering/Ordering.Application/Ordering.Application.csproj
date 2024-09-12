@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\CoreLibrary\CoreLibrary\CoreLibrary.csproj" />
     <ProjectReference Include="..\Ordering.Domain\Ordering.Domain.csproj" />
+    <ProjectReference Include="..\..\..\CoreLibrary\CoreLibrary.Messaging\CoreLibrary.Messaging.csproj" />
   </ItemGroup>
 
   <ItemGroup>

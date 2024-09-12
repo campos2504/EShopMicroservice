@@ -1,12 +1,9 @@
 ﻿using CoreLibrary.Behaviors;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using CoreLibrary.Messaging.MassTransit;
+
 
 namespace Ordering.Application
 {
@@ -22,7 +19,7 @@ namespace Ordering.Application
                 config.AddOpenBehavior(typeof(LoggingBehavior<,>));
             });
 
-            
+            services.AddMessageBroker(configuration, Assembly.GetExecutingAssembly());
 
             return services;
         }
