@@ -1,5 +1,7 @@
+using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using Microsoft.FeatureManagement;
 using Ordering.Domain.Events;
 
 namespace Ordering.Application.Orders.EventHandlers.Domain
